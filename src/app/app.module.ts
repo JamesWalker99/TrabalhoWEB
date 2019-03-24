@@ -8,7 +8,12 @@ import { InformativoComponent } from './informativo/informativo.component';
 import { JavaClassComponent } from './java-class/java-class.component';
 import { InformativoDoisComponent } from './informativo-dois/informativo-dois.component';
 import { NavComponent } from './nav/nav.component';
-import {MatDivider} from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatOptionModule, MatSelectModule,
+   MatAutocompleteModule, MatInputModule , MatDivider, MatExpansionModule, MatIconModule, MatDatepickerModule, MatCardTitle, MatCardModule, MatMenuTrigger, MatMenuModule, MatSidenavModule} from '@angular/material';
+
+
 
 
 @NgModule({
@@ -25,6 +30,23 @@ import {MatDivider} from '@angular/material';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatFormFieldModule,
+    MatOptionModule,
+    MatSelectModule,
+    MatAutocompleteModule,
+    MatInputModule,
+    MatExpansionModule,
+    MatIconModule,
+    MatDatepickerModule,
+    MatCardModule,
+    MatMenuModule,
+    MatSidenavModule,
+    
+
   ],
   providers: [],
   bootstrap: [AppComponent]

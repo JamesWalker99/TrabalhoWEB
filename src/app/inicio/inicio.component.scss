@@ -1,0 +1,26 @@
+.image-home {
+  display: block;
+  zoom: 70%;
+  position: relative;
+  float: right;
+
+
+  img{
+    width: 100%;
+    margin-bottom: 0;
+    position: relative;
+  }
+}
+
+.info{
+  background: transparent;
+  width: 500px;
+  height: 200px;
+  position: fixed;
+  margin: 200px 0 0 5%;
+  text-align: left;
+  color: #080344;
+  font-size: 14pt;
+  line-height: 30px;
+  font-family: 'Open Sans', sans-serif;
+}

@@ -3,6 +3,71 @@
 
     <p>A declaração de classes em Java possui uma sintaxe simples e de fácil compreensão que nos permite criar atibutos,
         propriedades e métodos. Por exemplo, uma classe chamada Produto, com os seguintes atributos:</p>
+    <li>código : int</li>
+    <li>descrição : string</li>
+    <li>preco : double</li>
 
-    
+    <p>A representação desta classe, na sintaxe java seria algo como:</p>
+    <img class="img-cod" src="../../assets/cod-html.png"/>
+
+    <p><b>Linha 1:</b> Nessa linha há os seguintes termos: <a class="code">public</a> define que a classe produto estará
+        disponível em todo o projeto; <a class="code">class</a> define que estamos criando uma classe; e <a
+            class="code">produto</a> é o nome da classe.</p>
+    <p><b>Linha 3 a 5:</b> Aqui temos o que chamamos de atributos. São variáveis privadas que representam as
+        características da classe. Note o modificador de acesso <a class="code">private</a>, que indica que tais
+        variáveis só poderão ser acessadas de dentro da classe na qual foram declaradas, bem como o tipo e o nome de
+        cada atributo.</p>
+    <p><b>Linha 7 a 9:</b> Já aqui temos os <i>métodos da classe</i>, que são públicos. Esses métodos garantem que os
+        atributos da classe não sejam acessados diretamente. Com isso implementamos o encapsulamento, um dos pilares da
+        orientação a objeto.</p>
+
+    <h3>Herança</h3>
+    <p>A herança é um tipo de relacionamento muito comum na orientação a objetos e ocorre quando uma classe descende da
+        outra e herda suas características e comportamentos, além de implementar os seus próprios. Por exemplo,
+        considere o diagrama de classes da figura a seguir, em que a assinatura herda de produto:</p>
+    <img class="img-cod center" src="../../assets/diagrama-classe.png"/>
+    <p class="legenda">Diagrama de classes com assinatura herdando de produto.</p><br><br>
+    <p>Nesse cenário a classe Assinatura herda de Produto e também define propriedade e método próprios. Em java essa classe seria implementada da seguinte forma:</p>
+    <img class="img-code" src="../../assets/cod-2-html.png"/>
+    <p><br><b>Linha 1:</b> A herança em Java é representada pela palavra-chave <a class="code">extends</a> na declaração
+        da classe, seguida do nome da classe da qual se deseja herdar. Nesse caso, Assinatura herda de Produto;<br><br>
+        <b>Linhas 3, 9 a 11, 13 a 15:</b> Nesse trecho temos o atributo <a class="code">dataExpiração</a>, bem como os
+        getters e setters que permitem acessar esse atributo;<br><br>
+        <b>Linhas 5 a 7:</b> O método <a class="code">calculaPeriodoAteExpiracao</a> retorna um <a class="code">Period</a>, classe nativa do Java que representa um intervalo de tempo (nesse caso o tempo que falta até a assinatura expirar);</p>
+
+        <h3>Interfaces</h3>
+        <p>Na Orientação a Objetos as interfaces funcionam como contratos, ou seja, elas definem comportamentos que devem ser cumpridos pelas classes. Nesta relação dizemos que Assinatura implementa a interface Expiravel. Na figura a seguir temos um diagrama que mostra uma nova configuração para a relação entre essas classes.</p>
+
+        <img class="img-cod center" src="../../assets/diagrama_interface.png"/>
+        <p class="legenda">Diagrama de classes com assinatura herdando de produto.</p><br><br>
+
+        <p>Nesse cenário a interface <a class="code">Expiravel</a> define que toda classe que representa um produto cuja data de expiração ou validade chega ao fim (expira) deve implementar o método <a class="code">calculaPeriodoAteExpiracao</a>. Por exemplo, se tivéssemos outra classe Voucher ou Desconto, por exemplo, ela poderia implementar essa classe a definir o comportamento desse método.</p>
+        <p>Em java a interface <a class="code">Expiravel</a> seria escrita dessa forma:</p>
+        <img src="../../assets/cod-3-html.png" class="img-cod"/>
+        <p><b>Linha 1:</b> Note o uso da palavra reservada interface e também no nome da interface: <a class="code">Expiravel</a>. Em Java convencionou-se nomear as interfaces como Expiravel, Compravel, Colecionavel. <br>
+        <b>Linha 3:</b> Em uma interface todos os métodos são públicos, portanto é comum omitirmos o modificador de acesso <a class="code">public</a>. Tais métodos também são abstratos e sua implementação fica por conta da classe que implementa a interface.</p>
+        <br>
+        <p>Agora, considerando que a classe Assinatura implementa a interface Expiravel, seu código seria modificado da seguida forma:</p>
+        <img src="../../assets/cod-4-html.png" class="img-code">
+        <p><b>Linha 1:</b> Em Java declaramos a relação de implementação através da palavra-chave <a class="code">implements</a>. Essa declaração deve sempre vir após a declaração da herança, como demonstrado acima. <br>
+        <b>Linha 6 a 9:</b> Uma vez que <a class="code">Assinatura</a> implementa a interface <a class="code">Expiravel</a>, devemos obrigatoriamente declarar em <a class="code">Assinatura</a> um corpo para o método <a class="code">calculaPeriodoAteExpiracao</a>.</p>
+        <br>
+        <p>Note a presença da anotação <a class="code">@Override</a> sobre o método <a class="code">calculaPeriodoAteExpiracao</a>, que informa ao compilador que estamos sobrescrevendo o método declarado na interface. @Override garante que as duas assinaturas sejam iguais, gerando um erro de compilação caso não sejam.</p>
+        <p>Diferente de outras linguagens, no Java a herança múltipla não é permitida. Porém, embora só possamos herdar de uma única classe, é possível implementar diversas interfaces.</p>
+
+        <h3>Porque usar interfaces?</h3>
+        <p>Uma interface define um contrato, que além de descrever o que uma classe deve fazer, obriga essa classe a fazê-lo. Geralmente nos valemos desse recurso quando notamos que um certo comportamento é compartilhado entre diferentes classes, tendo como objetivo o reaproveitamento de código através do polimorfismo.</p>
+        <p>Considere por um momento que sua aplicação contém as classes Assinatura e Desconto. Perceba um comportamento comum entre essas classes: ambas expiram após um certo período de tempo. Mas como modelar esse comportamento já que essas são classes tão distintas? Considerando que em algum momento você precise calcular e exibir os dias restantes até a expiração, a fim de tomar ações baseando-se nesse dado, como fazê-lo sem duplicar seu código?</p>
+        <p>Uma abordagem pode ser mover o atributo data de expiração para a classe Produto, alterando <a class="code">exibirDiasAteExpirar</a> para receber um Produto.</p>
+        <img src="../../assets/cod-5-html.png" class="img-code">
+        <p>Mas note que nem todo Produto expira. Além disso, o que fazer com a classe Desconto, que não é um Produto? Para resolver essa questão precisamos isolar o comportamento de expirar em uma outra unidade de código.</p>
+        <p>Para ilustrar como fazê-lo, vamos redefinir o método <a class="code">exibirDiasAteExpirar</a> para receber a interface Expiravel em lugar de alguma de suas implementações, como Assinatura, Desconto, etc.</p>
+        <img src="../../assets/cod-6-html.png" class="img-code">
+        <p>E agora nessa nova abordagem, podemos calcular os dias para expiração de forma flexível, independente de qualquer implementação ou código concreto. Resolvemos assim também o problema de termos no futuro diferentes formas para expirar algo. Se quisermos dar dias de redenção na Assinatura antes de registrar sua expiração, por exemplo, nosso programa estará pronto para ser modificado, necessitando apenas de pequenos ajustes em um local específico: a implementação do método <a class="code">calculaPeriodoAteExpiracao</a> do Expiravel correspondente.</p>
+        <img src="../../assets/cod-7-html.png" class="img-code">
+        <p>A partir desses conceitos podemos criar diversas outras classes e interfaces, com seus atributos, propriedades e métodos específicos.</p>
+
+        <p style="font-size: 9pt">Fonte: <a href="https://www.devmedia.com.br/como-criar-minha-primeira-classe-em-java/38940">DevMedia</a></p>
+        <br>
+        <br>
 </div>

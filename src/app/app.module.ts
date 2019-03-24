@@ -1,3 +1,4 @@
+import { InicioComponent } from './inicio/inicio.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -8,7 +9,7 @@ import { InformativoComponent } from './informativo/informativo.component';
 import { JavaClassComponent } from './java-class/java-class.component';
 import { InformativoDoisComponent } from './informativo-dois/informativo-dois.component';
 import { NavComponent } from './nav/nav.component';
-import {MatDivider} from '@angular/material';
+import {MatCardModule} from '@angular/material';
 
 
 @NgModule({
@@ -18,13 +19,14 @@ import {MatDivider} from '@angular/material';
     JavaClassComponent,
     InformativoDoisComponent,
     NavComponent,
-    MatDivider
+    InicioComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

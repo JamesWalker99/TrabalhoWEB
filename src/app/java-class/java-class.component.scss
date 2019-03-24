@@ -48,5 +48,48 @@ p {
 }
 
 .principal {
-  margin: 0;
+  margin-left: 25%;
+  position: relative;
+  width: 55% !important;
+
+  p,
+  li {
+    line-height: 30px;
+    text-align: justify;
+    color: #0a0a0a;
+    font-size: 11pt;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  h3 {
+    margin-top: 8%;
+    color: #080344;
+  }
+
+  h1{
+    color: #080344;
+  }
+
+  .img-cod {
+    margin: 2% 0 0 1%;
+
+  }
+
+  .center{
+    margin-left: 35%;
+  }
+
+  .code {
+    background: #d9d9d9;
+    padding: 0.5%;
+    border-radius: 5px;
+    font-family: "Consolas", sans-serif;
+    font-size: 12pt;
+    color: grey;
+  }
+
+  .legenda{
+    font-size: 10pt;
+    text-align: center;
+  }
 }

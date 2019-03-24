@@ -21,3 +21,11 @@ ul {
         }
     }
 }
+.textbox{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .textbox> * {
+    width: 100%;
+}

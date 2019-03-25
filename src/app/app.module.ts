@@ -11,7 +11,7 @@ import { NavComponent } from './nav/nav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatOptionModule, MatSelectModule,
-   MatAutocompleteModule, MatInputModule, MatExpansionModule, MatIconModule, MatDatepickerModule, MatCardTitle, MatCardModule, MatMenuTrigger, MatMenuModule, MatSidenavModule, MatDividerModule, MatListModule} from '@angular/material';  
+   MatAutocompleteModule, MatInputModule, MatExpansionModule, MatIconModule, MatDatepickerModule, MatCardTitle, MatCardModule, MatMenuTrigger, MatMenuModule, MatSidenavModule, MatDividerModule, MatListModule, MatNativeDateModule} from '@angular/material';  
 import { InicioComponent } from './inicio/inicio.component';
 
 
@@ -47,7 +47,9 @@ import { InicioComponent } from './inicio/inicio.component';
     MatMenuModule,
     MatSidenavModule,
     MatDividerModule,
-    MatListModule
+    MatListModule,
+    MatNativeDateModule,
+
     
 
   ],

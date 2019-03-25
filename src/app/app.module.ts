@@ -1,4 +1,3 @@
-import { InicioComponent } from './inicio/inicio.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -9,7 +8,13 @@ import { InformativoComponent } from './informativo/informativo.component';
 import { JavaClassComponent } from './java-class/java-class.component';
 import { InformativoDoisComponent } from './informativo-dois/informativo-dois.component';
 import { NavComponent } from './nav/nav.component';
-import {MatCardModule} from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatOptionModule, MatSelectModule,
+   MatAutocompleteModule, MatInputModule, MatExpansionModule, MatIconModule, MatDatepickerModule, MatCardTitle, MatCardModule, MatMenuTrigger, MatMenuModule, MatSidenavModule, MatDividerModule, MatListModule} from '@angular/material';  
+import { InicioComponent } from './inicio/inicio.component';
+
+
 
 
 @NgModule({
@@ -18,15 +23,33 @@ import {MatCardModule} from '@angular/material';
     InformativoComponent,
     JavaClassComponent,
     InformativoDoisComponent,
-    NavComponent,
-    InicioComponent
+    InicioComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatCardModule
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatFormFieldModule,
+    MatOptionModule,
+    MatSelectModule,
+    MatAutocompleteModule,
+    MatInputModule,
+    MatExpansionModule,
+    MatIconModule,
+    MatDatepickerModule,
+    MatCardModule,
+    MatMenuModule,
+    MatSidenavModule,
+    MatDividerModule,
+    MatListModule
+    
+
   ],
   providers: [],
   bootstrap: [AppComponent]

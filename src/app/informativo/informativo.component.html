@@ -1,1 +1,237 @@
-<h1>Primeiro Informativo</h1>
+<!-- CHECKBOX -->
+<div>
+  <h1>Checkbox</h1>
+  <p><a class="code">
+      < mat-checkbox>
+    </a> fornece a mesma funcionalidade que um nativo <a class="code">
+      < input type="checkbox></a> aprimorado com os estilos e animações do Material Design.</p>
+  <div class=" caixa">
+        <mat-checkbox>Clique!</mat-checkbox>
+</div>
+<br>
+<h3>Etiqueta da caixa de seleção</h3>
+<p>O rótulo da caixa de seleção é fornecido como o conteúdo para o elemento <a class="code">
+    < mat-checkbox>
+  </a>. O label pode ser posicionado antes ou depois da caixa de seleção definindo a propriedade <a
+    class="code">labelPosition</a> para <a class="code">'before'</a> ou <a class="code">'after'</a>.</p>
+<p>Se, por acaso, você não quiser que o label apareça ao lado da caixa de seleção, poderá usar <a
+    class="code">aria-label</a> ou <a class="code">aria-labelledby</a> para especificar um rótulo apropriado.</p>
+<p>Além disso, o <a class="code">
+    < mat-checkbox>
+  </a> é compatível com o <a class="code">@angular/forms</a> e suporta tanto o <a class="code">FormsModule</a> quanto o
+  <a class="code">ReactiveFormsModule</a>.</p>
+<br>
+<h3>Estado indeterminado</h3>
+<p>O <a class="code">
+    < mat-checkbox>
+  </a> possui um estado <a class="code">indeterminate</a> semelhante ao <a class="code">
+    < input type="checkbox></a>. Embora a propriedade <a class=" code">indeterminate
+  </a> da caixa de seleção seja verdadeira, ela será renderizada como indeterminada, independentemente do valor do <a
+    class="code">checked</a> e, qualquer interação com a caixa de seleção por um usuário (isto é, clicando) removerá o
+  estado indeterminado.</p>
+<br>
+<h3>Configuração de ação</h3>
+<p>Quando o usuário clica no <a class="code">
+    < mat-checkbox>
+  </a>, o comportamento padrão é alternar o valor de <a class="code">checked</a> e definir <a
+    class="code">indeterminate</a> como <a class="code">false</a>. Este comportamento pode ser personalizado fornecendo
+  um novo valor de <a class="code">MAT_CHECKBOX_CLICK_ACTION</a> para a caixa de seleção.</p><br>
+<p>Os valores possíveis são:</p>
+<br>
+
+<p class="subtitle">noop</p>
+<p>Não altera o valor do <a class="code">checked</a> ou de <a class="code">indeterminate</a>. Os desenvolvedores possuem
+  o poder de implementar ações de clique personalizadas.</p><br>
+<p class="subtitle">check</p>
+<p>Altera o valor de <a class="code">checked</a>, ignorando o valor <a class="code">indeterminate</a>. Se a caixa de
+  seleção estiver no estado <a class="code">indeterminate</a>, a caixa de seleção será exibida como uma caixa de seleção
+  <a class="code">indeterminate</a>, independente do valor de <a class="code">checked</a>.</p><br>
+<p class="subtitle">check-indeterminate</p>
+<p>É o comportamento padrão do <a class="code">
+    < mat-checkbox>
+  </a>. Com o <a class="code">indeterminate</a> sempre definido para <a class="code">false</a> no clique do usuário.
+  Isso corresponde ao comportamento nativo do <a class="code">
+    < input type="checkbox></a>.</p>
+
+<mat-divider class=" divider">
+      </mat-divider>
+      </div>
+      <!-- FIM CHECKBOX -->
+      <!-- INPUT -->
+      <div>
+        <h1>Input</h1>
+        <p>O <a class="code">matInput</a> é uma diretiva que permite que os elementos nativos de <a class="code">
+            < input>
+          </a> e <a class="code">
+            < textarea>
+          </a> possam trabalhar em <a class="code">
+            < mat-form-field>
+          </a>.</p>
+        <div class=" caixa">
+          <mat-form-field>
+            <input matInput placeholder="Escreva">
+          </mat-form-field>
+        </div>
+        <h3>Atributos</h3>
+        <p>Todos os atributos que podem ser usados normalmente com o <a class="code">
+            < input>
+          </a> podem ser usados como elementos internos em <a class="code">
+            < mat-form-field>
+          </a> também. Isso inclui as diretivas angulares como o <a class="code">ngModel</a> e <a
+            class="code">formControl</a>.</p>
+        <p>A única limitação é que o atributo <a class="code">type</a> só pode ser um dos valores suportados por <a
+            class="code">matInput</a>.</p><br>
+        <h5>Tipos suportados:</h5>
+        <li>color</li>
+        <li>date</li>
+        <li>datetime-local</li>
+        <li>email</li>
+        <li>month</li>
+        <li>number</li>
+        <li>password</li>
+        <li>search</li>
+        <li>tel</li>
+        <li>text</li>
+        <li>time</li>
+        <li>url</li>
+        <li>week</li>
+
+        <h3>Recursos do campo de formulário</h3>
+        <p>Existem vários recursos do <a class="code">
+            < mat-form-field>
+          </a> que podem ser usados com qualquer <a class="code">
+            < input matInput>
+          </a>. Estes incluem mensagem de erro, dicas, prefixo, sufixo e temas.</p><br>
+
+        <p class="subtitle">placeholder</p>
+        <p>O placeholder é o texto mostrado quando o rótulo <a class="code">
+            < mat-form-field>
+          </a> está flutuando, mas a entrada está vazia. Ele é usado para fornecer ao usuário uma dica adicional sobre o
+          que deve digitar na entrada. O placeholder pode ser especificado configurando o atributo <a
+            class="code">placeholder</a> e, em alguns casos, o <a class="code">
+            < mat-form-field>
+          </a> pode usar o placeholder como rótulo.</p><br>
+
+        <p class="subtitle">Mudança quando mensagens de erro são mostradas</p>
+        <p>O <a class="code">
+            < mat-form-field>
+          </a> permite associar mensagens de erro ao seu <a class="code">matInput</a>. Por padrão, as mensagens de erro
+          são mostradas quando o control é inválido e/ou o usuário interagiu de maneira errada. Se você deseja
+          substituir esse comportamento (por exemplo, mostrar o erro assim que o control for inválido), você poderá usar
+          a propriedade <a class="code">errorStateMatcher</a>. A propriedade usa uma instância de um objeto <a
+            class="code">errorStateMatcher</a>. Um <a class="code">errorStateMatcher</a> deve implementar um único
+          método <a class="code">isErrorStage</a> que leva o <a class="code">FormControl</a> para o <a
+            class="code">matInput</a>, bem como o formulário pai retorna um valor booleano indicando se o valor deve ser
+          mostrado ou não (<a class="code">true</a> ou <a class="code">false</a>).</p>
+        <p>Um correspondente do estado global de erro pode ser especificado configurando o provedor <a
+            class="code">errorStateMatcher</a>. Isso se aplica a todas as entradas. Por conveniência, <a
+            class="code">ShowOnDirtyErrorStateMatcher</a> está disponível para mostrar quando a entrada é inválida.</p>
+      </div>
+
+      <!-- FIM INPUT -->
+      <!-- SELECT -->
+      <div>
+          <mat-divider class=" divider">
+            </mat-divider>
+
+            <h1>Select</h1>
+            <p>O <a class="code">< mat-select></a> é um controle de formulário usado para selecionar um valor de um conjunto de opções, semelhante ao elemento nativo <a class="code">< select></a> e ele é projetado para funcionar dentro de um elemento<a class="code">< mat-form-field></a>.</p>
+            <p>Para adicionar opções ao select, adicione o elemento <a class="code">< mat-option></a> ao <a class="code">< mat-select></a>. Cada <a class="code">< mat-option></a> tem uma propriedade <a class="code">value</a> que pode ser usada para definir o valor que será selecionado se o usuário escolher essa opção. O conteúdo de <a class="code">< mat-option></a> é que será mostrado para o usuário.</p>
+            <div class="caixa">
+        <mat-form-field>
+          <mat-label>Escolha o tamanho da fonte</mat-label>
+          <mat-select #fontSize value="16px" (selectionChange)="triggerResize()">
+            <mat-option value="10px">10px</mat-option>
+            <mat-option value="12px">12px</mat-option>
+            <mat-option value="14px">14px</mat-option>
+            <mat-option value="16px">16px</mat-option>
+            <mat-option value="18px">18px</mat-option>
+            <mat-option value="20px">20px</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field [style.fontSize]="fontSize.value">
+          <mat-label>Teste de Fonte</mat-label>
+          <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2"
+            cdkAutosizeMaxRows="5"></textarea>
+        </mat-form-field>
+      </div>
+
+      <p>O <a class="code">< mat-select></a> também suporta todas as diretivas de formulário a partir do núcleo <a class="code">FormsModule (NgModel)</a> e <a class="code">ReactiveFormsModule (FormControl, FormGroup, etc)</a>. Tal como acontece no elemento nativo <a class="code">< select></a>, <a class="code">< mat-select></a> também suporta uma função <a class="code">compareWith</a>.</p>
+        <p>O <a class="code">< mat-select></a> apresenta formas singulares de apresentação que podem ser melhores consultadas no site do Material, tais como: </p>
+        <li>Desativar opções selecionadas ou individuais;</li>
+        <li>Redefinir o valor de seleção;</li>
+        <li>Criar grupos de opções;</li>
+        <li>Seleção múltipla;</li>
+        <li>Personalização do rótulo do gatilho;</li>
+        <li>Desativar efeito de ondulação;</li>
+        <li>Adicionar estilos personalizados ao painel suspenso;</li>
+        <li>Mudança quando mensagem de erro são mostradas;</li>
+        <li>Interação com o teclado;</li>
+      </div>
+      <!-- FIM SELECT -->
+      <!-- AUTOCOMPLETE -->
+      <div>
+          <mat-divider class=" divider">
+            </mat-divider>
+            <h1>Autocomplete</h1>
+            <p>O autocomplete é uma entrada de texto normal aprimorada por um painel de opções sugeridas.</p>
+
+        <form [formGroup]="stateForm">
+          <div class="caixa">
+          <mat-form-field>
+            <input type="text" matInput placeholder="Grupo de Estados do Sul" formControlName="stateGroup" required
+              [matAutocomplete]="autoGroup">
+            <mat-autocomplete #autoGroup="matAutocomplete">
+              <mat-optgroup *ngFor="let group of stateGroupOptions | async" [label]="group.letter">
+                <mat-option *ngFor="let name of group.names" [value]="name">
+                  {{name}}
+                </mat-option>
+              </mat-optgroup>
+            </mat-autocomplete>
+          </mat-form-field>
+        </div>
+        </form>
+        <br>
+        <h3>Preenchimento automático simples</h3>
+            <p>Comece adicionando um <a class="code">matInput</a> ao seu modelo. Vamos supor que você esteja usando a diretiva <a class="code">FormControl</a> e <a class="code">ReactiveFormsModule</a> para rastrear o valor da entrada.
+            </p>
+            <br>
+            <a class="code"> < mat-form-field> <br>
+                < input type="text" matInput [formControl]="myControl"> <br>
+              < / mat-form-field> <br>
+            </a>
+            <br>
+            <p>Em seguida, crie o painel de preenchimento automático e as opções exibidas dentro dele. Cada opção deve ser definida por uma tag <a class="code">mat-option</a>. Defina a propriedade de valor de cada opçãoc como desejar na seleção da opção.</p>
+            <br>
+            <a class="code"> 
+                < mat-autocomplete> <br>
+                    < mat-option *ngFor="let option of options" [value]="option">
+                      [ option ]  <br>
+                    < /mat-option> <br>
+                  < /mat-autocomplete> <br>
+            </a>
+            <br>
+            <p>Agora vamos precisar ligar a entrada de texto ao seu painel. Podemos fazer isso exportanto a instância do painel de preenchimento automático para uma variável de modelo local (aqui denominamos "auto") e vinculando essa variável à <a class="code">matAutoComplete</a> propriedade da entrada.</p>
+            <br>
+            <a class="code"> 
+                < mat-form-field> <br>
+                    < input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto"> <br>
+                  < /mat-form-field> <br>
+                  
+                  < mat-autocomplete #auto="matAutocomplete"> <br>
+                    < mat-option *ngFor="let option of options" [value]="option"> <br>
+                      [[ option ]] <br>
+                    < /mat-option> <br>
+                  < /mat-autocomplete> <br>
+            </a>
+
+            <p><br>
+            Além disso, o autocomplete possui funções singulares que também podem ser consultadas no site do Material, tais como:</p>
+            <li>Adicionando um filtro personalizado;</li>
+            <li>Configurando valores de controle de exibição separados;</li>
+            <li>Realçando automaticamente a primeira opção;</li>
+            <li>Interação com o teclado;</li>
+
+            <br><br><br>
+      </div>
+      <!-- FIM AUTOCOMPLETE -->

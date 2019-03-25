@@ -1,4 +1,11 @@
-<div><mat-accordion class="example-headers-align">
+<div class="principal">
+  <h1>Painel de Expansão</h1>
+  <p><a class="code">
+      < mat-expansion-panel>
+    </a> fornece uma visualização de resumo/detalhes expansível.</p>
+  <h3>Conteúdo do painel de expansão</h3>
+  <p>Cada painel de expansão deve incluir um cabeçalho e incluir opcionalmente uma barra de ação.</p>
+  <mat-accordion class="example-headers-align">
     <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
       <mat-expansion-panel-header>
         <mat-panel-title>
@@ -9,20 +16,20 @@
           <mat-icon>account_circle</mat-icon>
         </mat-panel-description>
       </mat-expansion-panel-header>
-  
+
       <mat-form-field>
         <input matInput placeholder="First name">
       </mat-form-field>
-  
+
       <mat-form-field>
         <input matInput type="number" min="1" placeholder="Age">
       </mat-form-field>
-  
+
       <mat-action-row>
         <button mat-button color="primary" (click)="nextStep()">Next</button>
       </mat-action-row>
     </mat-expansion-panel>
-  
+
     <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
       <mat-expansion-panel-header>
         <mat-panel-title>
@@ -33,17 +40,17 @@
           <mat-icon>map</mat-icon>
         </mat-panel-description>
       </mat-expansion-panel-header>
-  
+
       <mat-form-field>
         <input matInput placeholder="Country">
       </mat-form-field>
-  
+
       <mat-action-row>
         <button mat-button color="warn" (click)="prevStep()">Previous</button>
         <button mat-button color="primary" (click)="nextStep()">Next</button>
       </mat-action-row>
     </mat-expansion-panel>
-  
+
     <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
       <mat-expansion-panel-header>
         <mat-panel-title>
@@ -54,20 +61,53 @@
           <mat-icon>date_range</mat-icon>
         </mat-panel-description>
       </mat-expansion-panel-header>
-  
+
       <mat-form-field>
         <input matInput placeholder="Date" [matDatepicker]="picker" (focus)="picker.open()" readonly>
       </mat-form-field>
       <mat-datepicker #picker></mat-datepicker>
-  
+
       <mat-action-row>
         <button mat-button color="warn" (click)="prevStep()">Previous</button>
         <button mat-button color="primary" (click)="nextStep()">End</button>
       </mat-action-row>
     </mat-expansion-panel>
-  
-  </mat-accordion></div>
-  <div><mat-card class="card">
+
+  </mat-accordion>
+
+  <h3>Cabeçalho</h3>
+  <p>A tag <a class="code">
+      < mat-expansion-panel-header>
+    </a> mostra um resumo do conteúdo do painel e atua como o controle para a expansão e recolhimento. Este cabeçalho
+    pode conter, opcionalmente, um <a class="code">
+      < mat-panel-title>
+    </a> e um <a class="code">
+      < mat-panel-description>
+    </a>, que formatam o conteúdo do cabeçalho para alinhar com as especificações do Material Design.</p>
+  <p>Por padrão, o cabeçalho do painel de expansão inclui um ícone de alternância no final do cabeçalho para indicar o
+    estado de expansão. Este ícone pode ser escondido através da propriedade <a class="code">hideToggle</a>.</p>
+  <br>
+  <h3>Barra de ação</h3>
+  <p>As ações podem, opcionalmente, ser incluídas na parte inferior do painel, visíveis apenas quando a expansão estiver em seu estado expandido.</p>
+  <br>
+  <h3>Desativando um painel</h3>
+  <p>Os painéis de expansão podem ser desativados usando o atributo <a class="code">disable</a>. Um painel de expansão desativado não pode ser alternado pelo usuário, mas ainda pode ser manipulado na sua programação.</p>
+  <br>
+  <h3>Acordeão</h3>
+  <p>Múltiplos painéis de expansão podem ser combinados em um acordeão. A entrada <a class="code">< multi="true"</a> permite que o estado de expansões seja definido independentemente um do outro. Quando <a class="code">< multi="false"</a> (padrão), apenas um painel pode ser expandido em determinado momento.</p>
+
+  <h3>Renderização preguiçosa</h3>
+  <p>Por padrão, o conteúdo do painel de expansão será inicializado mesmo quando o painel estiver fechado. Para adiar a incialização até o painel ser aberto, o conteúdo deve ser fornecido como <a class="code">ng-template</a>.</p>
+</div>
+
+<!-- FIM PAINEL DE EXPANSÃO -->
+<div class="principal">
+    <mat-divider class=" divider">
+      </mat-divider>
+
+      <h1>Card</h1>
+      <p>A tag <a class="code">< mat-card></a> é um container de conteúdo para textos, fotos e ações no contexto de um único conteúdo. </p>
+  <mat-card class="card">
     <mat-card-header>
       <div mat-card-avatar class="image"></div>
       <mat-card-title>Shiba Inu</mat-card-title>
@@ -85,36 +125,61 @@
       <button mat-button>LIKE</button>
       <button mat-button>SHARE</button>
     </mat-card-actions>
-  </mat-card></div>
+  </mat-card>
+<br>
+  <h3>Seções básicas do card</h3>
+  <p>A placa mais básica precisa apenas de um elemento <a class="code">< mat-card></a> com algum conteúdo. No entanto, o Angular Material fornece várias seções predefinidas que você pode usar dentro de um <a class="code">< mat-card></a>.</p>
+  <li><a class="code">< mat-card-title></a>: Título do cartão</li>
+  <li><a class="code">< mat-card-subtitle></a>: Legenda do cartão</li>
+  <li><a class="code">< mat-card-content></a>: Conteúdo do cartão principal, destinado a blocos de texto</li>
+  <li><a class="code">< img-mat-card-image></a>: Imagem do cartão. Estica a imagem até a largura do container</li>
+  <li><a class="code">< mat-card-actions></a>: Espaço para botões na parte inferior do cartão</li>
+  <li><a class="code">< mat-card-footer></a>: Seção ancorada na parte inferior do cartão</li>
+  <br>
+  <h3>Cabeçalhos do card</h3>
+  <p>Além das seções mencionadas acima, <a class="code">< mat-card-header></a> dá a capacidade de adicionar um cabeçalho rico ao card. Este cabeçalho pode conter: </p>
+  <li><a class="code">< mat-card-title></a>: Um título dentro do cabeçalho</li>
+  <li><a class="code">< mat-card-subtitle></a>: Uma legenda no cabeçalho</li>
+  <li><a class="code">< img-mat-card-avatar></a>: Uma imagem usada como um avatar dentro do cabeçalho</li>
+</div>
+<!-- FIM CARD -->
+<div class="principal">
+  <mat-divider class="divider"></mat-divider>
+  <h1>Botão</h1>
+  <p>Os botões do Angular Material são elementos nativos <a class="code">< button></a> ou <a class="code">< a></a> aprimorados com o estilo de design do Material.</p>
+  
+  <button mat-icon-button>
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <br>
+  <p>Os elementos nativos <a class="code">< button></a> e <a class="code">< a></a> são sempre usados para fornecer a experiência mais direta e acessível para os usuários. Um elemento<a class="code">< button></a> deve ser usado sempre que alguma ação for executada. Um elemento <a class="code">< a></a> deve ser usado sempre que o usuário navegar para outra visão.</p>
+  <p>Existem várias variantes de botão, cada uma aplicada com um atributo:</p>
+  <li><a class="code">mat-button</a>: Botão de texto retangular sem elevação</li>
+  <li><a class="code">mat-raised-button</a>: Botão retangular contido c/ elevação</li>
+  <li><a class="code">mat-flat-button</a>: Botão retangular contido s/ elevação</li>
+  <li><a class="code">mat-stroked-button</a>: Botão delineado retangular s/ elevação</li>
+  <li><a class="code">mat-icon-button</a>: Botão circular com um fundo transparente, destinado a conter um ícone</li>
+  <li><a class="code">mat-fab</a>: Botão circular com elevação, padrão para a cor de destaque do tema</li>
+  <li><a class="code">mat-mini-fab</a>: O mesmo que mat-fab, menor</li>
+</div>
+<br>
+<div class="principal">
+  <mat-divider class="divider"></mat-divider>
+  <h1>Ícone</h1>
+  <p>O <a class="code">< mat-icon></a> facilita o uso de ícones baseados em vetores no seu aplicativo. Esta diretiva suporta fontes de ícone e ícones SVG, mas não formatos baseados em bitmap (png, jpg, etc.).</p>
 
-  <div><button mat-icon-button [matMenuTriggerFor]="menu">
-        <mat-icon>more_vert</mat-icon>
-      </button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item>
-          <mat-icon>dialpad</mat-icon>
-          <span>Redial</span>
-        </button>
-        <button mat-menu-item disabled>
-          <mat-icon>voicemail</mat-icon>
-          <span>Check voicemail</span>
-        </button>
-        <button mat-menu-item>
-          <mat-icon>notifications_off</mat-icon>
-          <span>Disable alerts</span>
-        </button>
-      </mat-menu></div>
+  <mat-icon>home</mat-icon>
+  <br>
+  <h3>Registrando ícones</h3>
+  <p><a class="code">MatIconRegistry</a> é um serviço injetável que permite associar nomes de ícones a URLs, SVGs, strings HTML e definiar aliases para classes de fontes CSS. seus métodos são discutidos abaixo.</p>
 
-      <div><mat-sidenav-container
-        class="container" (backdropClick)="close('backdrop')" *ngIf="shouldRun">
-      <mat-sidenav #sidenav (keydown.escape)="close('escape')" disableClose>
-        <p><button mat-button (click)="close('toggle button')">Toggle</button></p>
-      </mat-sidenav>
-    
-      <mat-sidenav-content>
-        <p><button mat-button (click)="sidenav.open()">Open</button></p>
-        <p>Closed due to: {{reason}}</p>
-      </mat-sidenav-content>
-    </mat-sidenav-container>
-    
-    <div *ngIf="!shouldRun">Please open on Stackblitz to see result</div></div>
+  <h5>Ícones de fonte com ligaduras</h5>
+  <p>Algumas fontes são projetadas para mostrar ícones usando ligaduras , por exemplo, renderizando o texto "home" como uma imagem inicial. Para usar um ícone de ligadura, coloque seu texto no conteúdo do componente <a class="code">mat-icon</a>.</p>
+  <p>por padrão <a class="code">mat-icon</a> espera a fonte de ícones do Material. Você pode especificar uma fonte diferente configurando a entrada <a class="code">fontSet</a> para a classe CSS a ser aplicada para usar a fonte desejada ou para um alias anteriormente registrado em <a class="code">MatIconRegistry.registerFontClassAlias</a>.</p>
+  <br>
+  <h5>Ícones com fonte CSS</h5>
+  <p>As fontes também podem exibir ícones definindo uma classe CSS para cada glifo de ícone, que normalmente usa um seletor <a class="code">:before</a> para fazer com que o ícone apareça. A FontAwesome usa essa abordagem para exibir seus ícones. Para usar essa fonte, defina a entrada <a class="code">fontSet</a> como a classe CSS da fonte (a própria classe ou um alias registrado) e defina a entrada <a class="code">fontIcon</a> para a classe do ícone específico a ser exibido.</p>
+  <p>Para ambos os tipos de fontes de ícones, você precisa especificar a classe de fonte padrão a ser usada quando <a class="code">fontSet</a> não estiver definida.</p>
+  <br>
+  <br>
+</div>

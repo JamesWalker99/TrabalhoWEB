@@ -1,6 +1,7 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import {MatSidenav} from '@angular/material/sidenav';
 
+
 @Component({
   selector: 'app-informativo-dois',
   templateUrl: './informativo-dois.component.html',

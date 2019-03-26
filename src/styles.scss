@@ -10,7 +10,7 @@ body {
   font-family: "Montserrat";
   font-size: 18px;
   width: 100%;
-}
+}Montserrat
 
 a {
   text-decoration: none;
@@ -28,8 +28,87 @@ a {
   }
 }
 
-// section {
-//   width: 80%;
-//   margin: 0 auto;
-//   padding: 2em;
-// }
+// PERSONALIZAÇÃO CHECKBOX
+.mat-checkbox-label{
+  color: rgba($color: #000000, $alpha: 0.8) !important;
+  font-size: 10pt;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+.mat-checkbox-frame{
+  border-color:  #080344;
+}
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background{
+  background-color: #080344;
+}
+
+.mat-checkbox-checkmark-path{
+  stroke: #fff !important;
+}
+
+._mat-animation-noopable.mat-checkbox{
+  margin-left: 35%;
+}
+
+
+// PERSONALIZAÇÃO INPUT
+.mat-form-field{
+  width: 100%;
+}
+
+.mat-input-element{
+  caret-color: #080344;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-label{
+  color: #080344;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11pt;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-underline{
+  background-color: #080344;
+}
+
+// PERSONALIZAÇÃO SELECT
+.mat-select-value, .mat-select-arrow, .mat-optgroup-label{
+  color: #080344;
+}
+
+.mat-option, .mat-optgroup-label  {
+  background-color: #e9e9e9;
+  color: #080344;
+}
+
+.mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple){
+  background-color: #080344;
+  color: #fff;
+}
+
+// PERSONALIZAÇÃO PAINEL DE EXPANSÃO
+.mat-expansion-panel-header-title{
+  color: #080344;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
+.mat-expansion-panel{
+  background: #e9e9e9;
+}
+
+.mat-expansion-panel-header-description, .cdk-text-field-autofill-monitored:not(:-webkit-autofill){
+  color: gray;
+}
+
+// PERSONALIZAÇÃO CARD
+.mat-card{
+  background: #e9e9e9;
+  color: #000000;
+}
+
+a{
+  text-decoration: none;
+}
